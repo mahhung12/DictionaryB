@@ -26,7 +26,7 @@ const Definitions = (props) => {
                     Your Browser doesn't support audio element.
                 </audio>
             )}
-            {word.length == 0 ? (
+            {word.length === 0 ? (
                 <span className="subTitle">
                     {" "}
                     Start by typing a word in Search
