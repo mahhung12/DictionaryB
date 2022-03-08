@@ -27,17 +27,17 @@ function App() {
     const [category, setCategory] = useState("en");
     const [lightMode, setLightMode] = useState(false);
 
-    const dictionaryAPI = async () => {
-        try {
-            const data = await axios.get(
-                `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`
-            );
-            setMeanings(data.data);
-        } catch (error) {
-            console.log(error);
-        }
-    };
     useEffect(() => {
+        const dictionaryAPI = async () => {
+            try {
+                const data = await axios.get(
+                    `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`
+                );
+                setMeanings(data.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
         dictionaryAPI();
     }, [category, word]);
 
